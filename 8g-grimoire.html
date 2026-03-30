@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>8G Grimoire</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle, #1a002b, #000);
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 30px;
+  color: #d8aaff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #a855f7;
+  border-radius: 15px;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: rgba(168,85,247,0.3);
+  transform: scale(1.05);
+}
+
+.profile {
+  display: none;
+  padding: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #a855f7;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔮 8G GRIMOIRE 🔮</h1>
+<p>The Book of Students</p>
+
+<div class="container" id="list"></div>
+
+<div class="profile" id="profile"></div>
+
+<script>
+const students = [
+"Adit Andhika Septiawan",
+"Agny Mai Amirat",
+"Alikha Zifara Maharani",
+"Alman Almaulana Putra",
+"Annisa Rania Putri",
+"Arya Ghaussan Ghaillan",
+"Asyifa Eka Faradilla",
+"Ayu Rahmawati",
+"Azzahra Nurfiqriyah",
+"Edelweis Alfatihah Nurislami",
+"Fadly Syahbani",
+"Fajar Agya Ilham",
+"Fathimah Az-Zahra Irawan",
+"Frans Jerrykho Nababan",
+"Gepin Azka",
+"Giovano Putra Firizqi",
+"Ilham Putra Maulana",
+"Jaka Aditya Putra",
+"Kelvin Nugraha",
+"Khairul Rizal",
+"Laisya Zakiyatul Muna",
+"Lusy Gustin Adiyansyah",
+"Meysa Azizah",
+"Muhamad Daffa Khalihur Rahman",
+"Muhamad Faeyza Anwar",
+"Muhamad Rafka Pratama",
+"Muhamad Revan Maulana",
+"Naa'imah Qothrunnadaa",
+"Nayla Almira Pahradia",
+"Nur Cinta Oktaviany",
+"Putri Aira Sofwana Ulya",
+"Repan Muhammad Repando",
+"Revino Faiq Syauki",
+"Rima Silviana",
+"Rina Rahayu",
+"Selvina Anggraeni",
+"Syaakira Kireinisa",
+"Yusbikha Faqih Saputra",
+"Zhilvya Dwina A-Zahra",
+"Zikra Achyar Nurlafi"
+];
+
+const list = document.getElementById("list");
+const profile = document.getElementById("profile");
+
+students.forEach(name => {
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerText = "📖 " + name;
+  div.onclick = () => showProfile(name);
+  list.appendChild(div);
+});
+
+function showProfile(name) {
+  list.style.display = "none";
+  profile.style.display = "block";
+  profile.innerHTML = `
+    <h2>${name}</h2>
+    <p>🌙 Umur: 13-14</p>
+    <p>🧪 Hobi: -</p>
+    <p>🎯 Cita-cita: -</p>
+    <p>💫 Tentang Aku: -</p>
+    <button onclick="back()">⬅ Kembali</button>
+  `;
+}
+
+function back() {
+  profile.style.display = "none";
+  list.style.display = "grid";
+}
+</script>
+
+</body>
+</html>

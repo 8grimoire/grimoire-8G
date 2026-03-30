@@ -12,15 +12,12 @@ body {
   color: white;
   text-align: center;
   overflow-x: hidden;
-  position: relative;
 }
 
-/* ⭐ BINTANG HALUS */
+/* 🌌 BINTANG */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 200%;
   background: url('https://www.transparenttextures.com/patterns/stardust.png');
@@ -29,13 +26,12 @@ body::before {
   animation: moveBg 100s linear infinite;
 }
 
-/* 🌌 GERAK PELAN */
 @keyframes moveBg {
   from { transform: translateY(0); }
   to { transform: translateY(-1000px); }
 }
-  
-  /* ✨ JUDUL */
+
+/* ✨ JUDUL */
 h1 {
   margin-top: 30px;
   font-size: 40px;
@@ -69,11 +65,10 @@ h1 {
 
 /* ✨ HOVER */
 .card:hover {
-  transform: scale(1.1) rotate(1deg);
+  transform: scale(1.1);
   box-shadow: 0 0 25px #a855f7;
 }
 
-/* 🌟 FADE */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -85,18 +80,17 @@ h1 {
   }
 }
 
-/* 🔮 PROFILE POPUP */
+/* 🔮 POPUP */
 .popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   display: none;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 0.5s;
 }
 
 .popup-content {
@@ -105,7 +99,7 @@ h1 {
   border-radius: 15px;
   width: 300px;
   box-shadow: 0 0 20px #a855f7;
-  animation: pop 0.4s ease;
+  animation: pop 0.3s;
 }
 
 @keyframes pop {
@@ -122,10 +116,36 @@ button {
   border-radius: 10px;
   cursor: pointer;
 }
+
+/* ✨ PARTIKEL MAGIC */
+.magic {
+  position: fixed;
+  width: 60px;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+.magic1 { top: 10%; left: 5%; }
+.magic2 { top: 70%; left: 85%; }
+.magic3 { top: 40%; left: 50%; }
+.magic4 { top: 80%; left: 20%; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
+}
 </style>
 </head>
 
 <body>
+
+<!-- 🔮 MAGIC ELEMENT -->
+<img src="https://www.transparenttextures.com/patterns/stardust.png" class="magic magic1">
+<img src="https://www.transparenttextures.com/patterns/stardust.png" class="magic magic2">
+<img src="https://www.transparenttextures.com/patterns/stardust.png" class="magic magic3">
+<img src="https://www.transparenttextures.com/patterns/stardust.png" class="magic magic4">
 
 <h1>🔮 8G Grimoire 🔮</h1>
 
